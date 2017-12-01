@@ -1,0 +1,23 @@
+- title: Home
+  url: /index.html
+- title: Team
+  url: /team.html
+- title: Series
+  url: /series
+  sublinks:
+    - title: dr. Who
+      url: /series/drwho.html
+    - title: Dexter
+      url: /series/dexter.html
+- title: Contact
+  url: /contact.html
+- title: Over Bob
+  url: /overbob.html
+- title: Tarieven
+  url: /tarieven.html
+- title: Contact
+  url: /contact.html
+- title: Beschikbaarheid
+  url: /beschikbaarheid.html
+- title: Mijn reservaties
+  url: /mijnreservaties.html
