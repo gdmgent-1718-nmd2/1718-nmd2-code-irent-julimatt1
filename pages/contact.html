@@ -23,20 +23,46 @@ title: Contact
     <div class="row">
         <div class="col-12">
                 <form>
-                    <div class="form-group">
-                        <input type="name" class="form-control" id="exampleInputname1" placeholder="Naam">
+                    <div class="form-group has-float-label">
+                        <input class="form-control"placeholder="naam"/>
+                        <label for="naam">Naam</label>
                     </div>
-                    <div class="form-group">
-                        <input type="GSM" class="form-control" id="exampleInputgsm1" placeholder="Tel / GSM">
+                    <div class="form-group has-float-label">
+                        <input class="form-control"placeholder="Tel / GSM"/>
+                        <label for="Tel / GSM">Tel / GSM</label>
                     </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                    <div class="form-group has-float-label">
+                        <input class="form-control" placeholder="Email"/>
+                        <label for="email">Email</label>
                     </div>
                     <div class="form-group">
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="Typ hier uw bericht"></textarea>
                     </div>
-                    <button type="button" class="btn btn-outline-dark">VERZENDEN</button>
+
                 </form>
         </div>
     </div>
 </div>
+
+<div class="verzend">
+    <button id="button"></button>
+  </div>
+  <script>
+      $(function() {
+      $( "#button" ).click(function() {
+        $( "#button" ).addClass( "onclic", 250, validate);
+      });
+    
+      function validate() {
+        setTimeout(function() {
+          $( "#button" ).removeClass( "onclic" );
+          $( "#button" ).addClass( "validate", 450, callback );
+        }, 2250 );
+      }
+        function callback() {
+          setTimeout(function() {
+            $( "#button" ).removeClass( "validate" );
+          }, 1250 );
+        }
+      });
+    </script>

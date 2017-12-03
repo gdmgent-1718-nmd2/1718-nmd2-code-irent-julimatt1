@@ -1,1 +1,79 @@
 @import "https://cdn.rawgit.com/tonystar/bootstrap-float-label/v3.0.0/dist/bootstrap-float-label.css";
+
+/* submit knop*/
+$brown: #996543;
+$gray: #bbbbbb;
+
+.verzend {
+
+  top:50%;
+  left:50%;
+
+  width: 130px;
+  height: 40px;
+
+}
+.verzend button {
+  outline:none;
+  height: 40px;
+  text-align: center;
+  width: 130px;
+  border-radius:40px;
+  background: $brown;
+  border: 2px solid $brown;
+  color:white;
+  letter-spacing:1px;
+  text-shadow:0;
+  font:{
+    size:12px;
+    weight:bold;
+  }
+  cursor: pointer;
+  transition: all 0.25s ease;
+  &:hover {
+    color:$brown;
+    background: white;
+  }
+  &:active {
+    //letter-spacing: 2px;
+    letter-spacing: 2px ;
+  }
+  &:after {
+    content:"Verzenden";
+  }
+}
+.onclic {
+  width: 40px;
+  border-color:$gray;
+  border-width:3px;
+  font-size:0;
+  border-left-color:$brown;
+  animation: rotating 2s 0.25s linear infinite;
+
+  &:after {
+    content:"";
+  }
+  &:hover {
+    color:white;
+    background: white;
+  }
+}
+.validate {
+  font-size:13px;
+  color: white;
+  background: $brown;
+  &:after {
+    font-family:'FontAwesome';
+    content:"\f00c";
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* end submit knop*/
