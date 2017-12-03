@@ -18,56 +18,32 @@ title: Mijn reservaties | Registreren
 
 <div class="col-12">
     <h1>Registreren</h1>
-    <form>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="inputName"> Naam </label>
-            <input type="text" class="form-control" id="inputName" placeholder="Naam">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="inputName">Voornaam</label>
-            <input type="text" class="form-control" id="inputName" placeholder="Voornaam">
-          </div>
-        </div>
-        <div class="form-group">
-                <label for="inputEmail">Email</label>
-                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-        </div>
-        <div class="form-group">
-                <label for="inputtel">Tel/GSM</label>
-                <input type="text" class="form-control" id="inputtel" placeholder="TEL/GSM">
-        </div>
-        <div class="form-group">
-          <label for="inputAddress">Adres</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="Straat + Huisnr">
-        </div>
-        
-        <div class="form-row">
-          <div class="form-group col-md-4">
-            <label for="inputland">Land</label>
-            <select id="inputland" class="form-control">
-              <option selected>Kies uw land</option>
-              <option>België</option>
-              <option>Nederland</option>
-            </select>
-          </div>
-          <div class="form-group col-md-6">
-                <label for="inputCity">Stad</label>
-                <input type="text" class="form-control" id="inputCity">
-              </div>
-          <div class="form-group col-md-2">
-            <label for="inputpostcode">Postcode</label>
-            <input type="text" class="form-control" id="inputpostcode">
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="form-check">
-            <label class="form-check-label">
-              <input class="form-check-input" type="checkbox"> Ik heb ervaring met alpaca's
-            </label>
-          </div>
-        </div>
+
+    <form class="well center-block" >
+            <div class="form-group has-float-label">
+                <input class="form-control"type="naam" placeholder="naam"/>
+                <label for="naam">Naam</label>
+            </div>
+            <div class="form-group has-float-label">
+                <input class="form-control" type="Email" placeholder="Email"/>
+                <label for="email">Email</label>
+            </div>
+            <div class="form-group has-float-label">
+                <input class="form-control" type="Telefoon" placeholder="Telefoon"/>
+                <label for="telefoon">Telefoon</label>
+            </div>
+            <div class="form-row">
+                <div class="form-group has-float-label col-7">
+                    <input class="form-control" type="Adres" placeholder="Adres"/>
+                    <label for="adres">Adres</label>
+                </div>
+                <div class="form-group has-float-label col">
+                    <input class="form-control" type="Postcode" placeholder="Postcode"/>
+                    <label for="postcode">Postcode</label>
+                </div>
+            </div>
     </form>
+
 </div>
 
 <div class="col-6">
