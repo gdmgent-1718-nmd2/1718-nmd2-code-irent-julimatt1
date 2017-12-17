@@ -5,10 +5,11 @@ permalink: /
 # ─────────────────────
 title: Bootstrap 4 &mdash; Voorbeeld
 ---
+
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <img src="assets/alpacafur.jpg" height="300px">
+            <img class="fur" src="assets/alpacafur.jpg" height="300px">
         </div>
     </div>
 </div>
@@ -18,12 +19,15 @@ title: Bootstrap 4 &mdash; Voorbeeld
             <article>
                 <p>Op zoek naar een extra leuke toets voor op je feestje? Of gewoon wat gezelschap ? 
                 Dan bent u bij Bob aan het juiste adres! Bob de alpaca heeft net dat ietsje meer om er een onvergetelijke ervaring van te maken.</p>
-                <p> Nog nooit een alapaca gezien ?
+                <p> Nog nooit een alpaca gezien ?
                 Wij verhuren Bob voor elke gelegenheid</p>
             </article>
-            <button type="button" class="btn btn-outline-dark">Reserveer Bob</button>
-            <button type="button" class="btn btn-outline-dark">Tarieven</button>
         </div>
+            <div class="col-12">
+            <a href="beschikbaarheid.html" class="btn btn-light float-right">Reserveer Bob</a>
+            <a href="tarieven.html" class="btn btn-light float-right">Tarieven</a>
+            </div>
+        
     </div>
 </div>
 
@@ -69,15 +73,12 @@ title: Bootstrap 4 &mdash; Voorbeeld
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-4">
-            <img src="assets/bob.jpg" class="float-left" alt="Bob" >
-        </div>
-        <div class="col-8">
-            <p>Kom meer te weten over Bob...</p>
-            <button type="button" class="btn btn-outline-dark">Over Bob</button>
-        </div>
-    </div>
-</div>
+<span>
+    <img src="assets/bob.jpg" class="bob" alt="Bob" ><p>Kom meer te weten over Bob...</p>
+    <button type="button" class="btn btn-light">Over Bob</button>
+    
+</span>
+
+
+
 
