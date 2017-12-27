@@ -642,14 +642,14 @@ form-control:focus{
 }
 /*footer*/
 footer{
-  background-color: #dec4a9;
+  background-color: #F3E9EA;
 }
 footer a{
-  color: white;
+  color: $brown;
   font-size: 1.2rem;
 }
 footer p{
-  color: white;
+  color: $brown;
 }
 .ftborder{
   border-right: 1px solid white;
@@ -669,4 +669,7 @@ footer p{
 }
 @media (min-width: 769px) {
   .logobottom{display:none;}
+}
+.card{
+  background-color: snow;
 }
