@@ -94,6 +94,10 @@ function updateMonth(m) {
       var dayCellText = document.createElement('p');
         dayCellText.className = 'calender__text--d';
         dayCellText.innerHTML = smDay;
+        if (!(smDay % 5)){//console.log(smDay);
+          dayCell.classList.add('avail');
+          dayCellText.classList.add('avail');
+        }
         if (smDay == today){
           dayCell.classList.add('active');
           dayCellText.classList.add('active');
@@ -109,5 +113,26 @@ function updateMonth(m) {
 function nextMonth() {
   month++;
 }
+
+
+
+//verzend//
+$(function() {
+  $( "#button" ).click(function() {console.log('ok');
+    $( "#button" ).addClass( "onclic", 250, validate);
+  });
+
+  function validate() {
+    setTimeout(function() {
+      $( "#button" ).removeClass( "onclic" );
+      $( "#button" ).addClass( "validate", 450, callback );
+    }, 2250 );
+  }
+    function callback() {
+      setTimeout(function() {
+        $( "#button" ).removeClass( "validate" );
+      }, 1250 );
+    }
+  });
 
 </script>
