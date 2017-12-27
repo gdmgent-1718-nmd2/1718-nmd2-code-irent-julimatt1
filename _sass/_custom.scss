@@ -112,7 +112,16 @@ h1{
 
 /*carousel fotos tekst*/
 .glas{
-  background: rgba(24, 24, 24, 0.1);
+  &:before {
+    content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: linear-gradient(transparent,#000000);
+	opacity: .2; 
+  }
 }
 
 /* submit knop*/
