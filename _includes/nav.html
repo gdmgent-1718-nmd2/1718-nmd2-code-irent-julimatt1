@@ -1,7 +1,21 @@
+<header id="header">
+    <img class="logonaam" src ="assets/logonaam.png" alt="logo" >
+</header>
+<div class="social">   
+  <a href="https://www.facebook.com/">
+    <i class="sprite sprite-facebooklogo"></i>
+  </a>
+  <a href="https://www.instagram.com/">
+    <i class="sprite sprite-instagramlogo"></i>
+  </a>
+</div> 
+
+<hr width="65%">
+
 <nav class="navbar navbar-expand-lg navbar-light " style="background-color: white">
     <!-- websitelogo -->
     <a class="navbar-brand" href="index.html">
-        <img src="assets/logo.png" width="30%">
+        <i class="sprite sprite-logo logo"></i>
     </a>
     
     <!-- hamburger icoon -->
@@ -19,16 +33,7 @@
                   {% assign class = 'active' %}
               {% endif %}
               {% if link.sublinks %}
-                  <li class="nav-item dropdown {{ class }}">
-                      <a href="{{ site.baseurl }}{{ link.url }}" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ link.title }} <span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                          {% for sublink in link.sublinks %}
-                                  <li class="dropdown-item">
-                                      <a class="nav-link" href="{{ site.baseurl }}{{ sublink.url }}">{{ sublink.title }}</a>
-                                  </li>
-                          {% endfor %}
-                      </ul>
-                  </li>
+               
               {% else %}
                   <li class="nav-item{{ class }}">
                       <a class="nav-link" href="{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
@@ -36,35 +41,11 @@
               {% endif %}
           {% endfor %}
           
-<div class="social">   
-             
-  <a href="https://www.facebook.com/">
-      <img src="assets/facebooklogo.png">
-  </a>
-  <a href="https://www.instagram.com/">
-    <img src="assets/instagramlogo.png">
-  </a>
-</div> 
-
-  
-  <!--
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li> -->
       </ul>
     </div>
   </nav>
+
+  {% unless page.title contains "index" %}
+  <img src="assets/alp.jpg" alt="vector" class="alp" width="100%">
+  <img src="assets/alpmobile.png" alt="vector" class="alpmobile" width="100%">
+  {% endunless %}

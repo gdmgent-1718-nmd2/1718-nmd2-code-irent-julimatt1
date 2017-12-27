@@ -3,19 +3,19 @@ layout   : default
 permalink: /
 # Custom Page Variables
 # ─────────────────────
-title: Bootstrap 4 &mdash; Voorbeeld
+title: index
 ---
 
 <div class="container">
     <div class="row">
-        <div class="col-12">
-            <img class="fur" src="assets/alpacafur.jpg" height="300px">
+        <div class="col-md-12">
+            <img class="fur img-fluid" src="assets/alpacafur.jpg" height="300px">
         </div>
     </div>
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-6">
+        <div class="col-md-8">
             <article>
                 <p>Op zoek naar een extra leuke toets voor op je feestje? Of gewoon wat gezelschap ? 
                 Dan bent u bij Bob aan het juiste adres! Bob de alpaca heeft net dat ietsje meer om er een onvergetelijke ervaring van te maken.</p>
@@ -23,7 +23,7 @@ title: Bootstrap 4 &mdash; Voorbeeld
                 Wij verhuren Bob voor elke gelegenheid</p>
             </article>
         </div>
-            <div class="col-12">
+            <div class="col-md-12">
             <a href="beschikbaarheid.html" class="btn btn-light float-right">Reserveer Bob</a>
             <a href="tarieven.html" class="btn btn-light float-right">Tarieven</a>
             </div>
@@ -33,7 +33,7 @@ title: Bootstrap 4 &mdash; Voorbeeld
 
 <div class="container">
     <div class="row">
-        <div class="col-12">
+        <div class="col-md-12">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -42,21 +42,21 @@ title: Bootstrap 4 &mdash; Voorbeeld
                         </ol>
                         <div class="carousel-inner">
                           <div class="carousel-item active">
-                            <img src="assets/wedding.jpg" alt="First slide" >
+                            <img class="d-block w-100" src="assets/wedding.jpg" alt="First slide" >
                             <div class="carousel-caption d-none d-md-block">
-                                <p>Bob was een grote meerwaarde bij ons huwelijksfeest. Zeker een aanrader zowel voor groot als klein !</p>
+                                <p class="glas">Bob was een grote meerwaarde bij ons huwelijksfeest. Zeker een aanrader zowel voor groot als klein !</p>
                              </div>
                           </div>
                           <div class="carousel-item">
                             <img class="d-block w-100" src="assets/alpacapic.jpg" alt="Second slide">
                             <div class="carousel-caption d-none d-md-block">
-                                <p>Bob is geweldig, ik zou hem zo opnieuw huren voor een volgend feestje!</p>
+                                <p class="glas">Bob is geweldig, ik zou hem zo opnieuw huren voor een volgend feestje!</p>
                             </div>
                           </div>
                           <div class="carousel-item">
                             <img class="d-block w-100" src="assets/kind.jpg" alt="Third slide">
                             <div class="carousel-caption d-none d-md-block">
-                                <p>Mijn kinderen beleefden de namiddag van hun leven met Bob. Hij is lief en heel aaibaar!</p>
+                                <p class="glas">Mijn kinderen beleefden de namiddag van hun leven met Bob. Hij is lief en heel aaibaar!</p>
                             </div>
                           </div>
                         </div>
@@ -74,9 +74,9 @@ title: Bootstrap 4 &mdash; Voorbeeld
 </div>
 
 <span>
-    <img src="assets/bob.jpg" class="bob" alt="Bob" ><p>Kom meer te weten over Bob...</p>
+    <img src="assets/bob.jpg" class="bob" alt="Bob" >
+    <span class="col-md-4">Kom meer te weten over Bob...</span>
     <button type="button" class="btn btn-light">Over Bob</button>
-    
 </span>
 
 

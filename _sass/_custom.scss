@@ -2,19 +2,110 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans');
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
 
+
+/*sprite*/
+.sprite {
+  background-image: url(spritesheet.png);
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.sprite-facebooklogo {
+  width: 32px;
+  height: 32px;
+  background-position: -5px -5px;
+}
+
+.sprite-facebooklogowit {
+  width: 32px;
+  height: 32px;
+  background-position: -47px -5px;
+}
+
+.sprite-instagramlogo {
+  width: 32px;
+  height: 32px;
+  background-position: -89px -5px;
+}
+
+.sprite-instagramlogowit {
+  width: 32px;
+  height: 32px;
+  background-position: -131px -5px;
+}
+
+.sprite-logo {
+  width: 148px;
+  height: 172px;
+  background-position: -173px -5px;
+}
+
+
+.social{
+  float:right;
+  position: relative;
+  right: 18%;
+  top: -40px;
+}
+.social a{
+    display: inline-block;
+}
+
+/*general*/
+
+.logonaam {
+  width:20%;
+}
+
+header{
+  text-align: center;
+}
+hr {
+  margin-top: 7px;
+  margin-bottom: 5px;
+}
+@media (max-width: 768px) {
+  .logonaam, header, hr{
+      display: none;
+  }
+}
+
+.nav-item{
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.logo{
+  zoom: 0.65;
+  position: relative;
+  top: -105px;
+  left: 55%;
+}
+
+@media (max-width: 992px) {
+  .logo{
+    zoom: 0.4;
+    position: inherit;
+  }
+}
+
 p {
   font-size: 1.1rem; 
 }
 
-
-.social a{
-    width: 30px;
-    height: 30px;
-    display: inline-block;
+h1{
+  padding-bottom: 30px;
 }
-.social a img{
-    width: 100%;
-    height: auto;
+
+.copyright{
+  font-size: 14px;
+  position: absolute;
+  bottom: 10px;
+}
+
+/*carousel fotos tekst*/
+.glas{
+  background: rgba(24, 24, 24, 0.1);
 }
 
 /* submit knop*/
@@ -94,6 +185,7 @@ $gray: #bbbbbb;
 }
 /* end submit knop*/
 
+
 /*loading alpaca*/
 .loading {
   width: 100%;
@@ -147,9 +239,10 @@ $gray: #bbbbbb;
 
 /*algemene knoppen*/
 .btn-light {
-  background-color: #996543;
+  background-color: $brown;
   border-radius:25px;
   margin: 10px;
+  margin-bottom: 40px;
   color: white;
   outline:none;
   cursor: pointer;
@@ -158,74 +251,352 @@ $gray: #bbbbbb;
     color:$brown;
     background: white;
     }
-
-
 }
-
-@media (min-width: 576px) {
+/*afbeelding fur*/
+@media (min-width: 480px) {
   .fur{
       display: none;
   }
 }
-
+/* vector alpaca onder navigatie*/
 .alp{
   padding-bottom: 20px;
 }
+.alpmobile{
+  display: none;
+}
 
+@media (max-width: 480px) {
+  .alp{
+    display: none;
+   }
+ 
+   .alpmobile{
+    display:initial;
+   }
+}
+
+/*bob home page*/
 .bob{
   width: 30%;
 }
 /*calender*/
 
-.calender {
-  margin: 2rem auto;
-  width:48%;
-  padding: 1.5rem;
-  border-radius: 3rem;
-  background: $brown;
-  font-size: 0;
-}
-.day, .week, .month {
-  font-family: 'Arimo', sans-serif;
-  cursor: pointer;
-  font-size: 1.5rem;
-  line-height: 4rem;
-  color: #ccc;
-  text-align: center;
-  box-sizing: border-box;
-  display: inline-block;
-  width: 4rem; height: 4rem;
-  border: 1px solid;
-  border-color: rgba(255,255,255,0);
-  border-radius: 50%;
-  transition: 200ms ease-in-out;
-}
-.week {
-  cursor: default;
-  color: #aaa;
-  font-size: 1.2rem;
-}
-.month {
-  width: 100%;
-}
-.day:hover {
-  border-color: rgba(255,255,255,.2);
-  background: rgba(255,255,255,.1);
-}
-.not {
-  color: #999;
-}
-.calender .day.current{
-  background:rgba(255,255,255,.15);
-  color:#f7f7f7;
-  text-shadow:1px 1px 2px rgba(0,0,0,.4);
+$white: hsla(0, 0%, 100%, 1);
+$white50op: hsla(0, 0%, 100%, .5);
+$lGrey: hsla(0, 0%, 95%, 1);
+$grey: hsla(0, 0%, 40%, 1);
+$grey70op: hsla(0, 0%, 40%, .7);
+$black: hsla(0, 0%, 20%, 1);
+$black50op: hsla(0, 0%, 20%, .5);
+$black20op: hsla(0, 0%, 20%, .5);
+$pColor: $brown;
+$pColor20op: hsla(339, 100%, 50%, .2);
+$bgColor: hsla(71, 58%, 64%, 1);
+
+$pFont: Lato, sans-serif;
+
+@mixin e($element) {
+    &__#{$element} {
+        @content;
+    }
 }
 
-.calender .day.full{
-  background:rgba(255,255,255,.25);
-  color:#f7f7f7;
-  text-shadow:1px 1px 2px rgba(0,0,0,.4);
-  border-radius: 0% !important;
+@mixin m($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}
+
+@mixin dropshadow {
+  box-shadow: 0 4px 4px $black50op;
+}
+
+@mixin transition($duration) {
+  transition-duration: $duration;
+}
+
+$side: 300px;
+
+html {
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+.widget {
+  @include dropshadow;
+  position: relative;
+  display: block;
+  width: 2 * $side;
+  height: $side;
+  margin: 50px auto;
+  font: {
+    size: 0;
+  }
+  .calender {
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: $side;
+    height: $side;
+    box-sizing: border-box;
+    background: $pColor;
+    @include e('month') {
+      width: $side;
+      height: $side/8 + ($side - $side/4)/14;
+      background: $pColor;
+      text-align: center;
+      position: relative;
+      box-sizing: border-box;
+      border-bottom: 1px solid $white;
+      @include m('text') {
+        color: $white;
+        position: relative;
+        display: inline-block;
+        margin: 0;
+        font: {
+          family: $pFont;
+          weight: 700;
+          size: 1.2rem;
+        }
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      @include m('icon') {
+        color: $white;
+        position: absolute;
+        display: inline-block;
+        margin: 0;
+        font: {
+          weight: 700;
+          size: 1.2rem;
+        }
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: default;
+        @include m('left') {
+          left: $side/8;
+        }
+        @include m('right') {
+          right: $side/8;
+        }
+      }
+    }
+    
+    @include e('days') {
+      display: inline-block;
+      width: 100%;
+      height: $side - ($side/8 + ($side - $side/4)/14);
+      box-sizing: border-box;
+      padding: $side/12 $side/8;
+    }
+    
+    @include e('cell') {
+      display: inline-block;
+      float: left;
+      text-align: center;
+      width: ($side - $side/4)/7;
+      height: ($side - $side/4)/7;
+      @include m('dOfW'){
+      }
+      @include m('d'){
+        @include transition(.3s);
+        box-sizing: border-box;
+        border: 1px solid $pColor;
+        // border-radius: 50%;
+        &.active {
+          // border: 1px solid white;
+          background-color: $white;
+          border: 1px solid white;
+        }
+        &:hover {
+          border: 1px solid white;
+        }
+      }
+    }
+    @include e('text') {
+      @include m('dOfW'){
+        margin: 0;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $white;
+        font: {
+          family: $pFont;
+          weight: 700;
+          size: 1rem;
+        }
+        line-height: 1rem;
+      }
+      @include m('d'){
+        @include transition(.3s);
+        margin: 0;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: default;
+        color: $white;
+        font: {
+          family: $pFont;
+          weight: 300;
+          size: 1rem;
+        }
+        line-height: 1rem;
+        &.active {
+          color: $pColor;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  
+  .schedule {
+    display: inline-block;
+    float: left;
+    width: $side;
+    height: $side;
+    box-sizing: border-box;
+    // padding: $side/8;
+    background: $white;
+    @include e('title') {
+      width: $side;
+      height: $side/8 + ($side - $side/4)/14;
+      // background: $white;
+      // text-align: center;
+      position: relative;
+      padding: 0 $side/16;
+      // position: relative;
+      @include m('text'){
+        color: $black;
+        position: relative;
+        margin: 0;
+        font: {
+          family: $pFont;
+          weight: 700;
+          size: 1.2rem;
+        }
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      @include m('date') {
+        color: $black50op;
+        position: absolute;
+        margin: 0;
+        left: $side/16;
+        bottom: 0;
+        font: {
+          size: .7rem;
+          family: $pFont;
+        }
+      }
+    }
+    
+    @include e('taskWrapper') {
+      display: inline-block;
+      position: relative;
+      width: 100%;
+      height: $side - ($side/8 + ($side - $side/4)/14);
+      box-sizing: border-box;
+      padding: $side/20 $side/16 $side/16;
+    }
+    
+    @include e('formWrapper') {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    
+    @include e('form') {
+      @include transition(.5s);
+      transition-timing-function: ease;
+      border-radius: 15px;
+      width: 30px;
+      height: 30px;
+      overflow: hidden;
+      padding: 0px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: inline-block;
+      background-color: $pColor;
+      @include dropshadow;
+      
+      > * {
+        @include transition(.5s);
+        opacity: 0;
+        &.show {
+          opacity: 1;
+        }
+      }
+
+      &.show {
+        width: 100%;
+        height: 100%;
+        right: 0px;
+        bottom: 0px;
+        padding: 20px;
+        border-radius: 0 0 15px 0;
+      }
+    }
+    
+    @include e('add') {
+      @include transition(.5s);
+      position: absolute;
+      right: $side/16;
+      bottom: $side/16;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      padding: calc((30px - 1.2rem)/2);
+      text-align: center;
+      background: {
+        color: $pColor;
+      }
+      text-align: center;
+      @include m('icon') {
+        position: relative;
+        color: $white;
+        @include transition(.5s);
+        transition-timing-function: ease;
+        user-select: none;
+        transform-origin: 50% 50%;
+        font: {
+          size: 1.2rem;
+          weight: 700;
+        }
+        width: 1.2rem;
+        height: 1.2rem;
+        margin: 0 auto;
+        line-heihgt: 1.2rem;
+        cursor: default;
+        &.active {
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+}
+.vakje-red{
+  color: $brown;
+}
+.red{
+  font-size: 60px;
+}
+
+/*table*/
+th{
+  background-color: $brown;
+  color: white;
+}
+
+/*form*/
+form-control:focus{
+  border-color:red;
 }
 
 /*breadcrumb*/
@@ -242,6 +613,7 @@ $gray: #bbbbbb;
   color: rgba(0, 0, 0, 1);
 }
 
+
 /*footer*/
 footer{
   background-color: #dec4a9;
@@ -252,4 +624,11 @@ footer a{
 }
 footer p{
   color: white;
+}
+.ftborder{
+  border-right: 1px solid white;
+}
+
+.ft{
+  padding: 30px;
 }

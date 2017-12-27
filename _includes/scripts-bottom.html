@@ -3,28 +3,111 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-<script>
-    $(function() {
-    $( "#button" ).click(function() {
-        $( "#button" ).addClass( "onclic", 250, validate);
-    });
-    
-    function validate() {
-        setTimeout(function() {
-        $( "#button" ).removeClass( "onclic" );
-        $( "#button" ).addClass( "validate", 450, callback );
-        }, 2250 );
-    }
-        function callback() {
-        setTimeout(function() {
-            $( "#button" ).removeClass( "validate" );
-        }, 1250 );
-        }
-    });
-</script>
 
 <script>
-    $('#sandbox-container div').datepicker({
-        todayHighlight: true
-    });
+//calender
+
+var date = new Date();
+var today = date.getDate();
+var todayDOfW = date.getUTCDay();
+var month = date.getMonth();
+var year = date.getFullYear();
+
+var months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+];
+
+var dOfW = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
+];
+
+//check for number of days in the month
+
+function updateSchdDate(dW, m, d) {
+  document.querySelector('.schedule__title--date').innerHTML = dOfW[dW] + ", " + months[m] + " " + d;
+}
+
+function updateMonth(m) {
+  document.querySelector('.calender__month--text').innerHTML = months[m];
+}
+
+(function monthCheck(month, day, dayOfWeek){
+  
+  updateMonth(month);
+  updateSchdDate(dayOfWeek, month, day);
+  
+  var daysInM, daysInMBefore;
+  if (month < 7) {
+    if (month == 1) { //february
+      if (year % 4 == 0){ //leap year
+        daysInM = 29;
+        daysInMBefore = 31;
+      } else {
+        daysInM = 28;
+        daysInMBefore = 31;
+      }
+    } else {
+      daysInM = 30 + (month+1)%2;
+      daysInMBefore = 30 + month%2;
+    }
+  } else {
+    daysInM = 30 + month%2;
+  }
+  
+  var calenderDays = document.querySelector('.calender__days');
+  var smDay = 1; //same month day
+  while (smDay <= daysInM) {
+    var dayCell = document.createElement('div');
+      dayCell.className = 'calender__cell calender__cell--d';
+      dayCell.addEventListener("click", function(e){
+        if (!this.classList.contains('active')){
+          var cActive = document.querySelector('.active');
+              cActive.querySelector('.active').classList.remove('active');
+              cActive.classList.remove('active');
+          this.classList.add('active');
+          this.querySelector('p').classList.add('active');
+          var cDay = String(this.querySelector('p').innerHTML);
+          var cDOfW = (String(this.querySelector('p').innerHTML) - today)%7 + todayDOfW;
+          if (cDOfW < 0) {
+             cDOfW += 7;
+          }
+          updateSchdDate(cDOfW, month, cDay);
+        }
+      }, false);
+      var dayCellText = document.createElement('p');
+        dayCellText.className = 'calender__text--d';
+        dayCellText.innerHTML = smDay;
+        if (smDay == today){
+          dayCell.classList.add('active');
+          dayCellText.classList.add('active');
+        }
+      dayCell.append(dayCellText);
+
+    calenderDays.append(dayCell);
+    smDay++;
+  }
+  
+})(month, today, todayDOfW);
+
+function nextMonth() {
+  month++;
+}
+
 </script>
