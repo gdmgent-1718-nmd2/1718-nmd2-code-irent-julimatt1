@@ -5,6 +5,25 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 
 <script>
+  //verzend//
+$(function() {
+  $( "#button" ).click(function() {console.log('ok');
+    $( "#button" ).addClass( "onclic", 250, validate);
+  });
+
+  function validate() {
+    setTimeout(function() {
+      $( "#button" ).removeClass( "onclic" );
+      $( "#button" ).addClass( "validate", 450, callback );
+    }, 2250 );
+  }
+    function callback() {
+      setTimeout(function() {
+        $( "#button" ).removeClass( "validate" );
+      }, 1250 );
+    }
+  });
+  
 //calender
 
 var date = new Date();
@@ -113,26 +132,5 @@ function updateMonth(m) {
 function nextMonth() {
   month++;
 }
-
-
-
-//verzend//
-$(function() {
-  $( "#button" ).click(function() {console.log('ok');
-    $( "#button" ).addClass( "onclic", 250, validate);
-  });
-
-  function validate() {
-    setTimeout(function() {
-      $( "#button" ).removeClass( "onclic" );
-      $( "#button" ).addClass( "validate", 450, callback );
-    }, 2250 );
-  }
-    function callback() {
-      setTimeout(function() {
-        $( "#button" ).removeClass( "validate" );
-      }, 1250 );
-    }
-  });
 
 </script>
