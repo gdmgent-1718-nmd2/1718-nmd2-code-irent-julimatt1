@@ -296,6 +296,12 @@ $gray: #bbbbbb;
 .bob{
   width: 30%;
 }
+/*over bob*/
+
+.card{
+  background-color: snow;
+}
+
 /*calender*/
 
 $white: hsla(0, 0%, 100%, 1);
@@ -670,6 +676,4 @@ footer p{
 @media (min-width: 769px) {
   .logobottom{display:none;}
 }
-.card{
-  background-color: snow;
-}
+
